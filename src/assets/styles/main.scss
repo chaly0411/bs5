@@ -1,0 +1,31 @@
+//1.Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+//@import "utilities";
+//2.Vendors
+@import "~node_modules/bootstrap/scss/bootstrap";
+@import "vendors/font-awesome/scss/fontawesome";
+//3.Base
+//4.Layout
+@import "layout/side-bar";
+@import "layout/header";
+@import "layout/grid";
+@import "layout/s-layout";
+//5.Components
+@import "components/avatar";
+@import "components/nav-tab";
+@import "components/buttons";
+@import "components/dropdowns";
+@import "components/forms";
+@import "components/icons";
+@import "components/cards";
+@import "components/scrollbar";
+@import "components/list-group";
+//6.Pages
+@import "pages/dashboard";
+//7.Themes
+//8.Custom
+
+body{
+  background-color: #f2f6f9;
+}

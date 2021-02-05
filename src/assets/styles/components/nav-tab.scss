@@ -1,0 +1,26 @@
+.side-bar-menu {
+  > .nav .nav-link {
+    @extend %flex-center;
+    transition: all 10s cubic-bezier(0, 0, 0.2, 1);
+    i.fa-angle-right {
+      transition: all 10s ease;
+    }
+    &[aria-expanded="true"]{
+      i.fa-angle-right {
+        transform: rotate(90deg);
+      }
+    }
+    span, i {
+      line-height: 1.5;
+    }
+  }
+  .sub-menu .nav-item {
+    font-size: 80%;
+    .nav-link {
+      transition: all .3s;
+      &:hover{
+        margin-left: 5px;
+      }
+    }
+  }
+}

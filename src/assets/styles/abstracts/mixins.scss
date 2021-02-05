@@ -1,0 +1,25 @@
+@mixin size-box ($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+%flex-center,.flex-center-vertical {
+  display: flex!important;
+  align-items: center;
+}
+.flex-center{
+  @extend %flex-center;
+  justify-content: center;
+}
+%inline-flex-center,.inline-flex-center-vertical {
+  display: inline-flex!important;
+  align-items: center;
+}
+.inline-flex-center{
+  @extend %inline-flex-center;
+  justify-content: center;
+}
+@mixin padding-y ($padding) {
+  padding-top: $padding !important;
+  padding-bottom: $padding !important;
+}

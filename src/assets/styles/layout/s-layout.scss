@@ -1,0 +1,24 @@
+.s-layout {
+  @extend %grid-auto-column;
+  .main-content {
+    padding-top: 75px;
+    padding-left: 250px;
+    transition: all .35s ease;
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      z-index: 1;
+    }
+  }
+  .side-bar {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+}
+.close-sidebar .main-content{
+  padding-left: 64px;
+}

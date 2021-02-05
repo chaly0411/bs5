@@ -1,0 +1,8 @@
+.btn-icon {
+  &:focus {
+    box-shadow: none;
+  }
+  i.far {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,8 @@
+.page-header {
+  .input-group {
+    width: 18rem;
+    .form-control[ngxdaterangepickermd] {
+      @include border-end-radius(.25rem!important);
+    }
+  }
+}

@@ -1,0 +1,129 @@
+<div class="p-4 dashboard-page">
+  <div>
+    <div class="flex-center-vertical page-header">
+      <h4>Sales Dashboard</h4>
+      <div class="input-group ms-auto">
+        <span class="input-group-text"><i class="fal fa-calendar"></i></span>
+        <input type="text" class="form-control" name="daterangeInput" />
+      </div>
+    </div>
+    <div class="page-content p-4">
+      <div class="d-grid dashboard-grid-1">
+        <div class="card item-success" *ngFor="let item of [1,2,3]">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div>All Orders</div>
+                <h3>3257</h3>
+                <div><span class="text-danger"><i class="fas fa-chevron-down"></i> 43.2</span> than last month</div>
+              </div>
+              <i class="far fa-clock item-icon"></i>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card map overflow-hidden">
+          <div class="p-3">
+            <h5>Country Base Profit</h5>
+            <div id="chart-bubble">
+              <apx-chart
+                [series]="chartOptions1.series"
+                [chart]="chartOptions1.chart"
+                [xaxis]="chartOptions1.xaxis"
+                [fill]="chartOptions1.fill"
+                [dataLabels]="chartOptions1.dataLabels"
+                [title]="chartOptions1.title"
+                [yaxis]="chartOptions1.yaxis"
+              ></apx-chart>
+            </div>
+          </div>
+          <div class="border-start country-list">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of countryList">
+                <div class="flex-center-vertical">
+                  <img src="./assets/images/flag/{{item.img}}.png" alt="">
+                  <span class="ms-3">{{item.name}}</span>
+                </div>
+                <small class="fw-bold">{{item.profit}}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center">Congratulations John!</h3>
+          </div>
+          <div class="card-body reward-view text-center">
+            <div class="reward-icon inline-flex-center"><i class="fas fa-trophy text-warning-dark"></i></div>
+            <h1 class="mt-4">$1000k</h1>
+            <div><span class="text-success"><i class="fal fa-chevron-up"></i>0.82%</span> since last year</div>
+            <h5 class="mt-4 mb-3">You have done 99.9% target sales reached today.</h5>
+            <small>Today 20 minutes ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid dashboard-grid-2 mt-4">
+        <div class="card" *ngFor="let item of [1,2,3]">
+          <div class="card-body d-flex align-items-start">
+            <div>
+              <div>Today Revenue</div>
+              <h3 class="fw-bold mt-2">$897k</h3>
+            </div>
+            <div class="ms-auto">
+              <div id="chart">
+                <apx-chart width="200" height="200"
+                  [series]="chartOptions.series"
+                  [chart]="chartOptions.chart"
+                  [dataLabels]="chartOptions.dataLabels"
+                  [plotOptions]="chartOptions.plotOptions"
+                  [yaxis]="chartOptions.yaxis"
+                  [legend]="chartOptions.legend"
+                  [fill]="chartOptions.fill"
+                  [stroke]="chartOptions.stroke"
+                  [tooltip]="chartOptions.tooltip"
+                  [xaxis]="chartOptions.xaxis"
+                ></apx-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid dashboard-grid-3 mt-4">
+        <div class="card">
+          <div class="card-header">
+            <h5>Top products</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush product-list">
+              <li class="list-group-item flex-center-vertical border-bottom-0" *ngFor="let item of productTopList">
+                <img src="./assets/images/products/{{item.img}}.jpg" alt="product" class="rounded">
+                <div class="ms-2">
+                  <h6 class="fw-bold">{{item.title}}</h6>
+                  <small>{{item.times}} times</small>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5>Earning Revenue</h5>
+          </div>
+          <div class="card-body">
+            <div id="chart-area">
+              <apx-chart
+                [series]="chartOptions2.series"
+                [chart]="chartOptions2.chart"
+                [xaxis]="chartOptions2.xaxis"
+                [fill]="chartOptions2.fill"
+                [dataLabels]="chartOptions2.dataLabels"
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
