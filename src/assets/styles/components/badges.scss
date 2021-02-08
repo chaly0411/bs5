@@ -1,0 +1,14 @@
+.badge.rounded-pill {
+  padding: 5px 14px;
+  border-radius: 10rem;
+  text-transform: capitalize;
+}
+
+$label-colors: #4454c3 #ecb403 #dc0441;
+$label-name: 'completed' 'pending' 'declined';
+
+@for $i from 1 through length($label-name) {
+  .label-#{nth($label-name, $i)} {
+    background-color: nth($label-colors,$i);
+  }
+}

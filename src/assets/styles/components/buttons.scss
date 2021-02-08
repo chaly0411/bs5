@@ -6,3 +6,19 @@
     font-size: 30px;
   }
 }
+
+.btn-more {
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  text-align: center;
+  color: #728096;
+  &:hover {
+    background: #f3f4f7;
+  }
+  &:focus{
+    box-shadow: none;
+  }
+}

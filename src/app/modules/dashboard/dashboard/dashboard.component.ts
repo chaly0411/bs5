@@ -1,19 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartComponent } from 'ng-apexcharts';
 import { LayoutService } from '../../../share/layout.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
+  public userList: any = [];
   public countryList = [];
   public productTopList = [];
   @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<any>;
   public chartOptions1: Partial<any>;
   public chartOptions2: Partial<any>;
-  constructor(private layoutService: LayoutService) {
+  constructor(private layoutService: LayoutService, private httpClient: HttpClient) {
+    this.httpClient.get('https://jsonplaceholder.typicode.com/users').subscribe((res) => {
+      this.userList = res;
+    });
     this.countryList = layoutService.country;
     this.productTopList = layoutService.product;
     this.chartOptions = {

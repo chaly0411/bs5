@@ -1,4 +1,4 @@
-$avatar-size: 2.5 4;
+$avatar-size: 2.5 3 4;
 
 @for $i from 1 through length($avatar-size) {
   .avatar-#{$i} {

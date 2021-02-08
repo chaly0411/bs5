@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsModule, WavesModule } from 'angular-bootstrap-md';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     DashboardRoutingModule,
     ChartsModule,
     WavesModule.forRoot(),
-    NgApexchartsModule
+    NgApexchartsModule,
+    HttpClientModule
   ]
 })
 export class DashboardModule { }

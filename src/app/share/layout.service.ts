@@ -55,23 +55,33 @@ export class LayoutService {
       {
         title: 'Latest Books',
         img: '1',
-        times: '2,30,400'
+        times: '2,30,400',
+        transaction: '#12323423',
+        status: 'completed'
       }, {
         title: 'New Branded Shoes',
         img: '2',
-        times: '3,45,675'
+        times: '3,45,675',
+        transaction: '#26762768',
+        status: 'pending'
       }, {
         title: 'Beauty Makeup kit',
         img: '3',
-        times: '5,23,324'
+        times: '5,23,324',
+        transaction: '#76273277',
+        status: 'completed'
       }, {
         title: 'Health Watch',
         img: '4',
-        times: '1,42,400'
+        times: '1,42,400',
+        transaction: '#67237267',
+        status: 'declined'
       }, {
         title: 'New Modal Shoes',
         img: '5',
-        times: '3,30,400'
+        times: '3,30,400',
+        transaction: '#561527167',
+        status: 'declined'
       }
     ];
   }

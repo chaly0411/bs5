@@ -99,7 +99,7 @@
             <ul class="list-group list-group-flush product-list">
               <li class="list-group-item flex-center-vertical border-bottom-0" *ngFor="let item of productTopList">
                 <img src="./assets/images/products/{{item.img}}.jpg" alt="product" class="rounded">
-                <div class="ms-2">
+                <div class="ms-3">
                   <h6 class="fw-bold">{{item.title}}</h6>
                   <small>{{item.times}} times</small>
                 </div>
@@ -108,8 +108,22 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-header">
+          <div class="card-header flex-center-vertical">
             <h5>Earning Revenue</h5>
+            <div class="ms-auto">
+              <button class="btn btn-outline-primary me-1">Week</button>
+              <button class="btn btn-outline-primary me-1">Month</button>
+              <button class="btn btn-primary">Year</button>
+            </div>
+            <div class="dropdown ms-3">
+              <button class="btn btn-more" type="button" id="earning-revenue" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="earning-revenue">
+                <li><a class="dropdown-item" href="javascript:void(0)" ><i class="fas fa-download me-2"></i> Download</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-cog me-2"></i> Settings</a></li>
+              </ul>
+            </div>
           </div>
           <div class="card-body">
             <div id="chart-area">
@@ -121,6 +135,79 @@
                 [dataLabels]="chartOptions2.dataLabels"
               ></apx-chart>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid dashboard-grid-4 mt-4">
+        <div class="card">
+          <div class="card-header flex-center-vertical">
+            <h5>New Transactions</h5>
+            <div class="dropdown ms-auto">
+              <button class="btn btn-more" type="button" id="transactions" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="transactions">
+                <li><a class="dropdown-item" href="javascript:void(0)" >Today</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" >Last week</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" >Last month</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" >Last year</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-cog me-2"></i> Settings</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table table-borderless">
+              <thead>
+              <tr>
+                <th>PRODUCT</th>
+                <th>TRANSACTIONS</th>
+                <th>DATE &TIME</th>
+                <th>AMOUNT</th>
+                <th>STATUS</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of productTopList">
+                <th class="flex-center-vertical">
+                  <img src="./assets/images/products/{{item.img}}.jpg" alt="product" class="avatar-2 rounded me-3">
+                  <span>{{item.title}}</span>
+                </th>
+                <td>{{item.transaction}}</td>
+                <td>11th July, 10am</td>
+                <td class="fw-bold">$13,206</td>
+                <td><span class="badge rounded-pill label-{{item.status}}">{{item.status}}</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header flex-center-vertical">
+            <h5>Recent Customers</h5>
+            <div class="dropdown ms-auto">
+              <button class="btn btn-more" type="button" id="recent-customers" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="recent-customers">
+                <li><a class="dropdown-item" href="javascript:void(0)" >Last week</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" >Last month</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" >Yearly</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-cog me-2"></i> Settings</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of userList">
+                <div class="flex-center-vertical">
+                  <img src="./assets/images/avatar/2.jpg" alt="" class="avatar-2">
+                  <span class="ms-3">{{item.name}}</span>
+                </div>
+                <small class="fw-bold">{{item.profit}}</small>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
